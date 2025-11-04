@@ -1,4 +1,4 @@
-package com.danielrothmann.dr
+package com.danielrothmann.dr.ui.experience
 
 
 import android.os.Bundle
@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danielrothmann.dr.data.Experience
+import com.danielrothmann.dr.R
+import com.danielrothmann.dr.domain.Experience
 
 class ExpiriensFragment : Fragment() {
 

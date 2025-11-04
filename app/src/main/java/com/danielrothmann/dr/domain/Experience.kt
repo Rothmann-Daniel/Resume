@@ -1,4 +1,4 @@
-package com.danielrothmann.dr.data
+package com.danielrothmann.dr.domain
 
 data class Experience(
     val id: Long,
