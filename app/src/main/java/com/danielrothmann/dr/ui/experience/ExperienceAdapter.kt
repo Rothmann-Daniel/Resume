@@ -38,13 +38,12 @@ class ExperienceAdapter(
 
             chipGroup.removeAllViews()
             experience.skills.forEach { skill ->
-                val chip = Chip(itemView.context).apply {
+                val chip = LayoutInflater.from(itemView.context)
+                    .inflate(R.layout.item_chip, chipGroup, false) as Chip
+                chip.apply {
                     text = skill
                     isCheckable = false
                     isClickable = false
-                    setChipBackgroundColorResource(com.google.android.material.R.color.m3_chip_background_color)
-                    setTextAppearanceResource(com.google.android.material.R.style.TextAppearance_Material3_BodyMedium)
-                    chipStrokeWidth = 1f
                 }
                 chipGroup.addView(chip)
             }
@@ -83,11 +82,12 @@ class ExperienceAdapter(
 
             chipGroupDetail.removeAllViews()
             experience.skills.forEach { skill ->
-                val chip = Chip(itemView.context).apply {
+                val chip = LayoutInflater.from(itemView.context)
+                    .inflate(R.layout.item_chip, chipGroupDetail, false) as Chip
+                chip.apply {
                     text = skill
                     isCheckable = false
                     isClickable = false
-                    setChipBackgroundColorResource(com.google.android.material.R.color.m3_chip_background_color)
                 }
                 chipGroupDetail.addView(chip)
             }
