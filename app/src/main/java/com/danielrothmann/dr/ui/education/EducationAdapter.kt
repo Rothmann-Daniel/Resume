@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
-import com.danielrothmann.dr.domain.Education
-import com.danielrothmann.dr.domain.EducationType
+import com.danielrothmann.dr.domain.models.Education
+import com.danielrothmann.dr.domain.models.EducationType
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup

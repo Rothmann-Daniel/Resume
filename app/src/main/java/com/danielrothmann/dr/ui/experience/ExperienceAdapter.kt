@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
-import com.danielrothmann.dr.domain.Experience
+import com.danielrothmann.dr.domain.models.Experience
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup

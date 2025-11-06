@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
-import com.danielrothmann.dr.domain.Experience
+import com.danielrothmann.dr.domain.models.Experience
 
 class ExpiriensFragment : Fragment() {
 

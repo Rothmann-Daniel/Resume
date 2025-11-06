@@ -1,4 +1,4 @@
-package com.danielrothmann.dr.domain
+package com.danielrothmann.dr.domain.models
 
 data class Education(
     val id: Long,

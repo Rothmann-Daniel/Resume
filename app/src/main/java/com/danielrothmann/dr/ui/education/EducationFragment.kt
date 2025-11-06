@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
-import com.danielrothmann.dr.domain.Education
-import com.danielrothmann.dr.domain.EducationType
+import com.danielrothmann.dr.domain.models.Education
+import com.danielrothmann.dr.domain.models.EducationType
 
 class EducationFragment : Fragment() {
 

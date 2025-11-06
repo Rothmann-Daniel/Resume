@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_education" />
     <fragment
         android:id="@+id/navigation_skills"
-        android:name="com.danielrothmann.dr.SkillsFragment"
+        android:name="com.danielrothmann.dr.ui.skills.SkillsFragment"
         android:label="fragment_skills"
         tools:layout="@layout/fragment_skills" />
     <fragment
