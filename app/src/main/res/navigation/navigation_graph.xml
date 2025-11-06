@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/navigation_experience"
-        android:name="com.danielrothmann.dr.ui.experience.ExpiriensFragment"
+        android:name="com.danielrothmann.dr.ui.experience.ExperienceFragment"
         android:label="fragment_expiriens"
-        tools:layout="@layout/fragment_expiriens" />
+        tools:layout="@layout/fragment_experience" />
     <fragment
         android:id="@+id/navigation_education"
         android:name="com.danielrothmann.dr.ui.education.EducationFragment"

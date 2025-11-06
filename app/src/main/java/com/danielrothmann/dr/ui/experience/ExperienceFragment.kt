@@ -1,4 +1,5 @@
-package com.danielrothmann.dr.ui.projects
+package com.danielrothmann.dr.ui.experience
+
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,23 +7,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.danielrothmann.dr.databinding.FragmentProjectsBinding
+import com.danielrothmann.dr.databinding.FragmentExperienceBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ProjectsFragment : Fragment() {
 
-    private var _binding: FragmentProjectsBinding? = null
+
+
+class ExperienceFragment : Fragment() {
+
+    private var _binding: FragmentExperienceBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ProjectsViewModel by viewModel()
-    private lateinit var adapter: ProjectsAdapter
+    private val viewModel: ExperienceViewModel by viewModel()
+    private lateinit var adapter: ExperienceAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProjectsBinding.inflate(inflater, container, false)
+        _binding = FragmentExperienceBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,23 +37,23 @@ class ProjectsFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProjectsAdapter(emptyList())
-        binding.projectsRecyclerView.apply {
+        adapter = ExperienceAdapter(emptyList())
+        binding.experienceRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = this@ProjectsFragment.adapter
+            adapter = this@ExperienceFragment.adapter
         }
     }
 
     private fun observeViewModel() {
-        viewModel.projects.observe(viewLifecycleOwner) { projects ->
-            adapter = ProjectsAdapter(projects)
-            binding.projectsRecyclerView.adapter = adapter
+        viewModel.experiences.observe(viewLifecycleOwner) { experiences ->
+            adapter = ExperienceAdapter(experiences)
+            binding.experienceRecyclerView.adapter = adapter
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.projectsRecyclerView.adapter = null
+        binding.experienceRecyclerView.adapter = null
         _binding = null
     }
 }
