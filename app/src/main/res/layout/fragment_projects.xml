@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectsFragment">
+    android:orientation="vertical"
+    android:background="#FAFAFA">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Заголовок -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Мои проекты"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:elevation="4dp" />
 
-</FrameLayout>
+    <!-- Подзаголовок -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Проекты с моего GitHub"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="@android:color/white" />
+
+    <!-- RecyclerView с проектами -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/projectsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

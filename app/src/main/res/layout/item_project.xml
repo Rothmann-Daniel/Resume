@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:strokeColor="#E0E0E0"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Название проекта и язык -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvProjectName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Название проекта"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#1A237E" />
+
+            <TextView
+                android:id="@+id/tvLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kotlin"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_language_chip"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp" />
+
+        </LinearLayout>
+
+        <!-- Описание проекта -->
+        <TextView
+            android:id="@+id/tvProjectDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Описание проекта"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Чипы с технологиями -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTechnologies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleLine="false"
+            app:chipSpacingHorizontal="6dp"
+            app:chipSpacingVertical="4dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Статистика и кнопка -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp">
+
+            <!-- Статистика -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Звезды -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⭐"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvStars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="12sp"
+                        android:textColor="#666666"
+                        android:layout_marginStart="4dp" />
+
+                </LinearLayout>
+
+                <!-- Форки -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🍴"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvForks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="12sp"
+                        android:textColor="#666666"
+                        android:layout_marginStart="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Кнопка GitHub -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGithub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GitHub"
+                android:textSize="12sp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:icon="@drawable/ic_github" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

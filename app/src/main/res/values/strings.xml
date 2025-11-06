@@ -7,7 +7,7 @@
 
     <string name="support_email">danilarothmann@gmail.com</string> <!-- support email -->
     <string name="email_subject">Сообщение для Daniel Rothmann </string>
-    <string name="email_body">ResumeApp: Hello Daniel, \n </string>
+    <string name="email_body">Resume App: Hello Daniel, \n </string>
     <string name="no_email_app">На этом устройстве не найдено ни одного почтового приложения</string>
     <string name="choose_email_app">Выберите почтовое приложение</string>
     <string name="email_send_error">Не удалось открыть почтовое приложение</string>

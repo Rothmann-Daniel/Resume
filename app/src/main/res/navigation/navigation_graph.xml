@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.danielrothmann.dr.ProfileFragment"
+        android:name="com.danielrothmann.dr.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_skills" />
     <fragment
         android:id="@+id/navigation_projects"
-        android:name="com.danielrothmann.dr.ProjectsFragment"
+        android:name="com.danielrothmann.dr.ui.projects.ProjectsFragment"
         android:label="fragment_projects"
         tools:layout="@layout/fragment_projects" />
 </navigation>

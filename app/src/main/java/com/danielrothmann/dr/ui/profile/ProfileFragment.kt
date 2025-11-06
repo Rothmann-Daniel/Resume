@@ -1,4 +1,4 @@
-package com.danielrothmann.dr
+package com.danielrothmann.dr.ui.profile
 
 import android.graphics.Paint
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.danielrothmann.dr.R
 import com.danielrothmann.dr.databinding.FragmentProfileBinding
 import com.danielrothmann.dr.domain.util.EmailUtils
 
