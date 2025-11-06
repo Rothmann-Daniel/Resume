@@ -2,4 +2,17 @@
     <string name="app_name">DR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Email /  "Написать писмо"  -->
+
+    <string name="support_email">danilarothmann@gmail.com</string> <!-- support email -->
+    <string name="email_subject">Сообщение для Daniel Rothmann </string>
+    <string name="email_body">ResumeApp: Hello Daniel, \n </string>
+    <string name="no_email_app">На этом устройстве не найдено ни одного почтового приложения</string>
+    <string name="choose_email_app">Выберите почтовое приложение</string>
+    <string name="email_send_error">Не удалось открыть почтовое приложение</string>
+    <string name="developer">Данила Ротман</string>
+    <string name="gmail">danielrotman@gmail.com</string>
+    <string name="mobile_phone">+7 921 568 68 55</string>
+    <string name="github_daniel">https://github.com/Rothmann-Daniel</string>
 </resources>

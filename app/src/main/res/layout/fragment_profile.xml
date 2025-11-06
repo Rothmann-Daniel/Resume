@@ -6,18 +6,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
 
+    <!-- Guidelines для границ -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guideline_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guideline_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guideline_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guideline_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
     <!-- Avatar Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
-        android:layout_width="360dp"
-        android:layout_height="360dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/right_guideline_24"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline_24"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -32,66 +60,53 @@
 
     <!-- Form Section -->
     <TextView
-        android:id="@+id/ed_userName_SingUp"
-        style="@style/CustomEditTextStyle"
-        android:layout_marginStart="16dp"
+        android:id="@+id/tv_nameProfile"
+        style="@style/CustomTextStyle"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:drawableStart="@drawable/ic_profile_data"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
-        android:text="Данила Ротман"
-        android:inputType="text"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/developer"
+        app:drawableStartCompat="@drawable/ic_profile_data"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline_16"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline_16"
         app:layout_constraintTop_toBottomOf="@+id/card" />
 
     <TextView
-        android:id="@+id/ed_sing_up_Email_SingUp"
-        style="@style/CustomEditTextStyle"
-        android:layout_marginStart="16dp"
+        android:id="@+id/tv_emailProfile"
+        style="@style/CustomTextStyle"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:drawableStart="@drawable/ic_email"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
-        android:text="danielrotman@gmail.com"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_userName_SingUp" />
+        android:text="@string/gmail"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColor="?attr/colorPrimary"
+        app:drawableStartCompat="@drawable/ic_email"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline_16"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline_16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameProfile" />
 
     <TextView
-        android:id="@+id/phone"
-        style="@style/CustomEditTextStyle"
-        android:layout_marginStart="16dp"
+        android:id="@+id/tv_phoneProfile"
+        style="@style/CustomTextStyle"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:drawableStart="@drawable/ic_phone"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
-        android:text="+7 921 568 68 55"
-        android:inputType="phone"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_sing_up_Email_SingUp" />
+        android:text="@string/mobile_phone"
+        android:autoLink="phone"
+        app:drawableStartCompat="@drawable/ic_phone"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline_16"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline_16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailProfile" />
 
     <TextView
-        android:id="@+id/git"
-        style="@style/CustomEditTextStyle"
-        android:layout_marginStart="16dp"
+        android:id="@+id/tv_git"
+        style="@style/CustomTextStyle"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:drawableStart="@drawable/ic_github"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/black"
-        android:text="https://github.com/Rothmann-Daniel"
-        android:inputType="textEmailAddress"
         android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone" />
+        android:text="@string/github_daniel"
+        android:autoLink="web"
+        app:drawableStartCompat="@drawable/ic_github"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline_16"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline_16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phoneProfile" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
