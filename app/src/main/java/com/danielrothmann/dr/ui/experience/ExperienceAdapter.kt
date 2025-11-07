@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
 import com.danielrothmann.dr.domain.models.Experience
@@ -14,8 +15,15 @@ import com.google.android.material.chip.ChipGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ExperienceAdapter(
-    private val experiences: List<Experience>
+    private var experiences: List<Experience>  = emptyList()
 ) : RecyclerView.Adapter<ExperienceAdapter.ViewHolder>() {
+
+    // Метод для обновления данных
+    fun updateData(newExperience: List<Experience>) {
+        val diffResult = DiffUtil.calculateDiff(ExperienceDiffCallback(experiences,newExperience))
+        experiences = newExperience
+        diffResult.dispatchUpdatesTo(this)
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvCompany: TextView = itemView.findViewById(R.id.tvCompany)
@@ -35,6 +43,7 @@ class ExperienceAdapter(
             tvSummary.text = experience.summary
 
             tvCurrentJob.visibility = if (experience.isCurrent) View.VISIBLE else View.GONE
+            tvCurrentJob.text = "По настоящее время"
 
             chipGroup.removeAllViews()
             experience.skills.forEach { skill ->
@@ -66,7 +75,12 @@ class ExperienceAdapter(
 
             tvDetailCompany.text = experience.company
             tvDetailPosition.text = experience.position
-            tvDetailPeriod.text = "${experience.period} • ${experience.duration}"
+            tvDetailPeriod.text = if (experience.isCurrent) {
+                "${experience.period}"
+            } else {
+                "${experience.period} • ${experience.duration}"
+            }
+
             tvDetailDescription.text = experience.fullDescription
 
             layoutAchievements.removeAllViews()
@@ -110,4 +124,21 @@ class ExperienceAdapter(
     }
 
     override fun getItemCount() = experiences.size
+}
+
+class ExperienceDiffCallback(
+    private val oldList: List<Experience>,
+    private val newList: List<Experience>
+) : DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList.size
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos].id == newList[newPos].id
+    }
+
+    override fun areContentsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos] == newList[newPos]
+    }
 }

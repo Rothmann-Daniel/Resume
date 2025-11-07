@@ -37,7 +37,7 @@ class ExperienceFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ExperienceAdapter(emptyList())
+        adapter = ExperienceAdapter()
         binding.experienceRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@ExperienceFragment.adapter
@@ -46,8 +46,7 @@ class ExperienceFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.experiences.observe(viewLifecycleOwner) { experiences ->
-            adapter = ExperienceAdapter(experiences)
-            binding.experienceRecyclerView.adapter = adapter
+            adapter.updateData(experiences)
         }
     }
 

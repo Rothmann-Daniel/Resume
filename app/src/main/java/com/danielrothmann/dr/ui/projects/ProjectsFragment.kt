@@ -28,28 +28,26 @@ class ProjectsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
-        observeViewModel()
+        setupRecyclerView() // Инициализируем адаптер один раз
+        observeViewModel()  // Подписываемся на данные
     }
 
     private fun setupRecyclerView() {
-        adapter = ProjectsAdapter(emptyList())
+        adapter = ProjectsAdapter() // Создаем адаптер один раз
         binding.projectsRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = this@ProjectsFragment.adapter
+            adapter = this@ProjectsFragment.adapter // Привязываем
         }
     }
 
     private fun observeViewModel() {
         viewModel.projects.observe(viewLifecycleOwner) { projects ->
-            adapter = ProjectsAdapter(projects)
-            binding.projectsRecyclerView.adapter = adapter
+            adapter.updateData(projects) //  Обновляем данные в существующем адаптере
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.projectsRecyclerView.adapter = null
         _binding = null
     }
 }

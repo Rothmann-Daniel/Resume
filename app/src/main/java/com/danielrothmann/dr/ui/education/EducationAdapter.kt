@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
 import com.danielrothmann.dr.domain.models.Education
@@ -14,8 +15,14 @@ import com.google.android.material.chip.ChipGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class EducationAdapter(
-    private val educationList: List<Education>
+    private var educationList: List<Education> = emptyList()
 ) : RecyclerView.Adapter<EducationAdapter.ViewHolder>() {
+
+    fun updateData(newEducation: List<Education>) {
+        val diffResult = DiffUtil.calculateDiff(EducationDiffCallback(educationList, newEducation))
+        educationList = newEducation
+        diffResult.dispatchUpdatesTo(this)
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvInstitution: TextView = itemView.findViewById(R.id.tvInstitution)
@@ -107,4 +114,21 @@ class EducationAdapter(
     }
 
     override fun getItemCount() = educationList.size
+}
+
+class EducationDiffCallback(
+    private val oldList: List<Education>,
+    private val newList: List<Education>
+) : DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList.size
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos].id == newList[newPos].id
+    }
+
+    override fun areContentsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos] == newList[newPos]
+    }
 }

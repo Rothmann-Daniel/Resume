@@ -34,7 +34,7 @@ class EducationFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = EducationAdapter(emptyList())
+        adapter = EducationAdapter()
         binding.educationRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@EducationFragment.adapter
@@ -43,8 +43,7 @@ class EducationFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.education.observe(viewLifecycleOwner) { education ->
-            adapter = EducationAdapter(education)
-            binding.educationRecyclerView.adapter = adapter
+            adapter.updateData(education)
         }
     }
 

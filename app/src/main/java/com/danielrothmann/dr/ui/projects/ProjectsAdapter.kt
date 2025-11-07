@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.danielrothmann.dr.R
 import com.danielrothmann.dr.domain.models.Project
@@ -14,8 +15,15 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class ProjectsAdapter(
-    private val projectsList: List<Project>
+    private var projectsList: List<Project> = emptyList()
 ) : RecyclerView.Adapter<ProjectsAdapter.ViewHolder>() {
+
+    // Метод для обновления данных
+    fun updateData(newProjects: List<Project>) {
+        val diffResult = DiffUtil.calculateDiff(ProjectDiffCallback(projectsList, newProjects))
+        projectsList = newProjects
+        diffResult.dispatchUpdatesTo(this)
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvProjectName: TextView = itemView.findViewById(R.id.tvProjectName)
@@ -72,4 +80,21 @@ class ProjectsAdapter(
     }
 
     override fun getItemCount() = projectsList.size
+}
+
+class ProjectDiffCallback(
+    private val oldList: List<Project>,
+    private val newList: List<Project>
+) : DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList.size
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos].id == newList[newPos].id
+    }
+
+    override fun areContentsTheSame(oldPos: Int, newPos: Int): Boolean {
+        return oldList[oldPos] == newList[newPos]
+    }
 }
