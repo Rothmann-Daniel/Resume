@@ -11,6 +11,13 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <ImageView
+            android:id="@+id/rect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:src="@drawable/rectangle_bottom_sheet"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

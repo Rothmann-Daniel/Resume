@@ -238,7 +238,7 @@ class ProfileRepositoryImpl : ProfileRepository {
                     "Retrofit 2 - для сетевых запросов к API",
                     "Gson - для парсинга JSON ответов",
                     "OkHttp3 - HTTP клиент с логированием запросов",
-                    "Coil - для загрузки и кэширования изображений"
+                    "Firebase -сервис авторизации, БД"
                 )
             ),
             Skill(
@@ -246,7 +246,8 @@ class ProfileRepositoryImpl : ProfileRepository {
                 category = "Architecture & DI",
                 skills = listOf(
                     "Kotlin - основной язык разработки",
-                    "MVVM - архитектурный паттерн",
+                    "MVVM/MVС/MVP - архитектурный паттерн",
+                    "Clean Architecture",
                     "Koin - dependency injection",
                     "Single Activity + Fragments - навигация",
                     "Jetpack Navigation Component - управление навигацией",
@@ -270,7 +271,20 @@ class ProfileRepositoryImpl : ProfileRepository {
                     "Material Design - современный UI",
                     "ViewBinding - привязка view",
                     "AndroidX - современные компоненты",
-                    "ViewPager2 - для swipe интерфейсов"
+                    "ViewPager2 - для swipe интерфейсов",
+                    "Coil/Glide - для загрузки и кэширования изображений",
+                    "Custom Views & Animations"
+                )
+            ),
+            Skill(
+                id = 6,
+                category = "Development Tools",
+                skills = listOf(
+                    "Android Studio",
+                    "Git & GitHub",
+                    "Gradle - система сборки",
+                    "Firebase - аналитика, crashlytics",
+                    "Permissions - управление разрешениями"
                 )
             ),
             Skill(
