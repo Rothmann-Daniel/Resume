@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Рекомендации"
+            android:text="Рекомендации (по запросу)"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
