@@ -103,7 +103,7 @@ class ProfileFragment : Fragment() {
     private fun getPdfFromRaw(): Uri? {
         return try {
             // Проверяем существование raw ресурса
-            val resourceId = R.raw.resume_daniel_rothmann
+            val resourceId = R.raw.resume_daniel_rothmann_updt
             val inputStream = resources.openRawResource(resourceId)
 
             // Создаем файл в кэш директории
