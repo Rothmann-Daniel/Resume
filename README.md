@@ -72,12 +72,11 @@
 app/
 ├── data/                    # Слой данных
 │   ├── repository/         # Репозитории
-│   └── models/             # Модели данных
-├── di/                     # Koin DI
+├── di/                     # Koin DI (module)
 ├── domain/                  # Бизнес-логика
 │   ├── models/             # Domain модели
 │   └── repository/         # Интерфейсы репозиториев
-└── util/                   # Email 
+└── util/                    # Утилиты
 └── ui/                      # Presentation слой
     ├── profile/            # Экран профиля
     ├── experience/         # Экран опыта
