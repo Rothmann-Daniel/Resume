@@ -110,7 +110,7 @@ APK будет в: `app/build/outputs/apk/release/`
 
 ## 👨‍💻 Автор
 
-**Даниил Ротман** - Android Developer
+**Данила Ротман** - Android Developer
 
 - 📧 Email: danilarothmann@gmail.com
 - ☎️ +7 921 568 68 55
