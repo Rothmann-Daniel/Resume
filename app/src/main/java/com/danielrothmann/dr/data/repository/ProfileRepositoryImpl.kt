@@ -144,6 +144,28 @@ class ProfileRepositoryImpl : ProfileRepository {
             ),
             Project(
                 id = 2,
+                name = "JobSearchApp",
+                description = "Android приложение для для поиска вакансий. Реализовано с использованием MVVM, Room, API.",
+                technologies = listOf("Kotlin", "MVVM", "Room", "Coroutines", "ViewBinding", "SingleActivity", "Retrofit", "Gson", "Coil", "Koin DI", "SingleActivity", "Lifecycle & ViewModel"),
+                githubUrl = "https://github.com/Rothmann-Daniel/JobSearchApp",
+                stars = 0,
+                forks = 0,
+                language = "Kotlin",
+                isFeatured = false
+            ),
+            Project(
+                id = 3,
+                name = "RandomUser App",
+                description = "Android приложение: Генератор пользователей",
+                technologies = listOf("Kotlin", "MVVM", "Room", "ViewBinding", "SingleActivity", "Retrofit", "Gson", "Coil", "Koin DI", "SingleActivity", "Lifecycle & ViewModel"),
+                githubUrl = "https://github.com/Rothmann-Daniel/RandomUser",
+                stars = 0,
+                forks = 0,
+                language = "Kotlin",
+                isFeatured = false
+            ),
+            Project(
+                id = 4,
                 name = "WeatherApp",
                 description = "Android приложение для просмотра текущей погоды, просмотр прогноза на 5 дней, смена локаций.",
                 technologies = listOf("Kotlin", "Volley(исп. альтернатива Retrofit)", "OpenWeather API", "Location Services", "SingleActivity", "LiveData", "Gson", "Picasso"),
@@ -154,7 +176,7 @@ class ProfileRepositoryImpl : ProfileRepository {
                 isFeatured = false
             ),
             Project(
-                id = 3,
+                id = 5,
                 name = "FoodDeliveryApp: BasketBite",
                 description = "Android приложение для заказа и доставки еды с возможностью выбора из разнообразного меню и интеграции с различными ресторанами.",
                 technologies = listOf("Kotlin", "Room", "ViewPager2", "Koin DI", "Favorites"),
