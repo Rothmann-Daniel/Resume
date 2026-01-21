@@ -58,7 +58,8 @@
 
 
 <img width="453" height="876" alt="Снимок экрана 2025-11-11 в 15 14 46" src="https://github.com/user-attachments/assets/bbed85ee-14d3-4baf-ae3d-4ed335b57c09" />
-<img width="585" height="816" alt="Снимок экрана 2025-11-12 в 13 05 14" src="https://github.com/user-attachments/assets/f8eef884-9d25-417f-a32d-87c2dae30dbc" />
+<img width="585" height="816" alt="Снимок экрана 2026-01-21 в 20 16 42" src="https://github.com/user-attachments/assets/6ac6cb56-abbb-4c1c-b35e-a4eb62929233" />
+
 
 
 
