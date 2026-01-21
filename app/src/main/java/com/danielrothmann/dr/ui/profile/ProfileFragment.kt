@@ -103,12 +103,12 @@ class ProfileFragment : Fragment() {
     private fun getPdfFromRaw(): Uri? {
         return try {
             // Проверяем существование raw ресурса
-            val resourceId = R.raw.resume_daniel_rothmann
+            val resourceId = R.raw.resume_daniel_rothmann_2026
             val inputStream = resources.openRawResource(resourceId)
 
             // Создаем файл в кэш директории
             val cacheDir = requireContext().cacheDir
-            val file = File(cacheDir, "resume_daniel_rothmann.pdf")
+            val file = File(cacheDir, "resume_daniel_rothmann_2026.pdf")
 
             // Копируем файл из raw ресурсов
             FileOutputStream(file).use { output ->
